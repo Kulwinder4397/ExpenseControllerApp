@@ -52,9 +52,9 @@ namespace ExpenseControllerApp
 
         private void B1_Click(object sender, EventArgs e)
         {
-            string output = "";
             string yearvalue = et1.Text.Trim();
-            if(yearvalue.Length != 4)
+            string output;
+            if (yearvalue.Length != 4)
             {
                 output = "Please Enter Year Value";
             }
@@ -72,16 +72,16 @@ namespace ExpenseControllerApp
                     else
                     {
                         int month = spinner.SelectedItemPosition;
-                        total = layer.GetUserExpenseTotal(username, year,month); 
+                        total = layer.GetUserExpenseTotal(username, year, month);
                         output = "Expense in " + months[month] + " " + year + ": $" + total;
                     }
                 }
-                catch(Exception ex)
+                catch (Exception)
                 {
                     output = "Year is not Valid";
                 }
             }
-            
+
             tv2.Text = output;
         }
     }

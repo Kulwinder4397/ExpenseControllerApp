@@ -15,7 +15,7 @@ namespace ExpenseControllerApp.Common
 {
     public class DataLayer
     {
-        private SQLiteConnection connection;
+        private readonly SQLiteConnection connection;
 
         public string Error { get; set; }
 
@@ -35,7 +35,7 @@ namespace ExpenseControllerApp.Common
                 connection.CreateTable<Category>();
                 connection.CreateTable<Expense>();
             }
-            catch (Exception ex)
+            catch (Exception )
             {
 
             }
@@ -110,7 +110,7 @@ namespace ExpenseControllerApp.Common
                 connection.Delete(category);
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 return false;
             }

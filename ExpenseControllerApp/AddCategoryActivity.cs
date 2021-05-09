@@ -44,17 +44,19 @@ namespace ExpenseControllerApp
         {
             string categoryid = et1.Text.Trim();
             string categoryname = et2.Text.Trim();
-            string message = "";
-           if (categoryid.Length == 0 || categoryname.Length == 0)
+            string message;
+            if (categoryid.Length == 0 || categoryname.Length == 0)
             {
                 message = "Please Enter Some Value in Boxes";
             }
             else
             {
-                Category category = new Category();
-                category.CategoryID = categoryid;
-                category.CategoryName = categoryname;
-                category.UserName = username;
+                Category category = new Category
+                {
+                    CategoryID = categoryid,
+                    CategoryName = categoryname,
+                    UserName = username
+                };
                 if (layer.CreateCategory(category))
                 {
                     message = "Expense Category Details are Saved!!!";

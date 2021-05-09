@@ -73,11 +73,13 @@ namespace ExpenseControllerApp
                     DateTime expensedate = new DateTime(year, month, day);
                     DateTime begin = new DateTime(1970, 1, 1);
                     Category category = categories[spinner.SelectedItemPosition];
-                    Expense expense = new Expense();
-                    expense.UserName = username;
-                    expense.CategoryName = category.CategoryName;
-                    expense.Amount = float.Parse(amount_string);
-                    expense.ExpenseDate = (long)(expensedate - begin).TotalMilliseconds;
+                    Expense expense = new Expense
+                    {
+                        UserName = username,
+                        CategoryName = category.CategoryName,
+                        Amount = float.Parse(amount_string),
+                        ExpenseDate = (long)(expensedate - begin).TotalMilliseconds
+                    };
                     if (layer.CreateExpense(expense))
                     {
                         Toast.MakeText(this, "Expense Entry is Saved", ToastLength.Long).Show();
@@ -87,7 +89,7 @@ namespace ExpenseControllerApp
                         Toast.MakeText(this, "Expense Entry is not Saved", ToastLength.Long).Show();
                     }
                 }
-                catch(Exception ex)
+                catch(Exception )
                 {
                     Toast.MakeText(this, "Please Enter Valid Number in Amount Box", ToastLength.Long).Show();
                 }
