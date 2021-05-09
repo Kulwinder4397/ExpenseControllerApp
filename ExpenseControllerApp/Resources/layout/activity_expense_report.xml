@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp"
+    android:background="#00CC99">
+
+    <RelativeLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv1"
+        android:textColor="#fff"
+        android:textSize="25sp"
+        android:text="Expense Report"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="34dp" />
+        <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:padding="8dp"
+        android:background="#fff"
+            
+        android:layout_below="@id/tv1"/>
+        <EditText
+        android:id="@+id/text1"
+        android:hint="Year"
+        android:inputType="numberSigned"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:padding="8dp"
+        android:background="#fff"            
+        android:layout_below="@id/spinner"/>
+        <Button
+        android:id="@+id/b1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Display Summary"
+        android:layout_below="@id/text1"
+        android:layout_marginTop="17dp" />
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv2"
+        android:textColor="#fff"
+        android:textSize="35sp"
+        android:text=""
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="34dp"
+            android:layout_below="@id/b1"/>
+        <Button
+        android:id="@+id/b2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Back To Home"
+        android:layout_below="@id/tv2"
+        android:layout_marginTop="17dp" />
+    </RelativeLayout>
+
+</ScrollView>
